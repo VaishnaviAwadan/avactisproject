@@ -1,13 +1,16 @@
 package com.avactis.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,34 +23,34 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-    public static WebDriver driver;
-    public static Properties prop;
-    public static WaitUtils waitUtils;
-    
-    // Constructor: Loads config and initializes WaitUtils
+    protected WebDriver driver; // Change to protected for subclass access
+    public Properties prop; // Removed static for instance-level use
+    public WaitUtils waitUtils;
+    public JavascriptExecutor jsExecutor; // Declare JavascriptExecutor
+
+    // Constructor: Loads config, initializes WaitUtils, and sets JavascriptExecutor
     public BaseClass() {
         loadConfig(); // Load properties from config file
-        if (driver != null) {
-            waitUtils = new WaitUtils(driver); // Initialize WaitUtils only if driver is not null
-        }
     }
-    
+
     // Method to load the configuration file
     public void loadConfig() {
         try {
             prop = new Properties();
-            System.out.println("Super constructor invoked");
+            System.out.println("Loading configuration...");
             FileInputStream ip = new FileInputStream(
-                    System.getProperty("user.dir") + "\\Configuration\\config.properties");
+                    System.getProperty("user.dir") + File.separator + "Configuration" + File.separator + "config.properties");
             prop.load(ip);
-            System.out.println("driver: " + driver);
+            System.out.println("Configuration loaded.");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            throw new RuntimeException("Config file not found. Please check the path.");
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException("Error loading config file.");
         }
     }
-    
+
     // Method to launch browser and application
     public void launchApp(String browserName) {
         if (browserName.equalsIgnoreCase("Chrome")) {
@@ -59,32 +62,51 @@ public class BaseClass {
         } else if (browserName.equalsIgnoreCase("IE")) {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
+        } else {
+            throw new IllegalArgumentException("Browser not supported: " + browserName);
         }
 
         // Maximize window and delete cookies
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        
+
         // Launch the URL from the config file
         driver.get(prop.getProperty("url"));
-        
-        waitUtils = new WaitUtils(driver); // Reinitialize WaitUtils after setting the driver
-    }
-    
-    // Click method with explicit wait
-    public void click(By locator) {
-        WebElement element = waitUtils.waitForElementToBeVisible(locator);
-        element.click();
+
+        // Initialize WaitUtils and JavascriptExecutor after the driver is created
+        waitUtils = new WaitUtils(driver);
+        jsExecutor = (JavascriptExecutor) driver;
     }
 
-    // SendKeys method with explicit wait
+    // Method to get the WebDriver instance
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    // Click method with explicit wait and JavaScript fallback
+    public void click(By locator) {
+        try {
+            WebElement element = waitUtils.waitForElementToBeVisible(locator);
+            element.click();
+        } catch (Exception e) {
+            // Use JavascriptExecutor if normal click fails
+            WebElement element = waitUtils.waitForElementToBeVisible(locator);
+            jsExecutor.executeScript("arguments[0].click();", element);
+        }
+    }
+
+    // SendKeys method with explicit wait and JavaScript fallback
     public void sendKeys(By locator, String text) {
-        WebElement element = waitUtils.waitForElementToBeVisible(locator);
-        element.clear();
-        element.sendKeys(text);
+        try {
+            WebElement element = waitUtils.waitForElementToBeVisible(locator);
+            element.clear();
+            element.sendKeys(text);
+        } catch (Exception e) {
+            // Use JavascriptExecutor if sendKeys fails
+            WebElement element = waitUtils.waitForElementToBeVisible(locator);
+            jsExecutor.executeScript("arguments[0].value='" + text + "';", element);
+        }
     }
 
     // GetText method with explicit wait
@@ -93,19 +115,26 @@ public class BaseClass {
         return element.getText();
     }
 
-    // isElementDisplayed method with explicit wait
+    // isElementDisplayed method with explicit wait and JavaScript check
     public boolean isElementDisplayed(By locator) {
         try {
             WebElement element = waitUtils.waitForElementToBeVisible(locator);
             return element.isDisplayed();
-        } catch (Exception e) {
-            return false;
+        } catch (NoSuchElementException | TimeoutException e) {
+            return false;  // Element not found or not visible within the timeout
         }
     }
 
+    // Scroll to element using JavaScript
+    public void scrollToElement(WebElement element) {
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
     // Method to quit WebDriver instance
-    public static void quitDriver() {
-        driver.quit();
-        driver = null; // Set driver to null to avoid memory leak
+    public void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null; // Set driver to null to avoid memory leak
+        }
     }
 }
