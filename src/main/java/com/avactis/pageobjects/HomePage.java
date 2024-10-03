@@ -5,14 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
 import com.avactis.base.BaseClass;
 
 public class HomePage extends BaseClass {
 
+	WebDriver Driver;
     private JavascriptExecutor jsExecutor;
 
     // Constructor to initialize elements and driver
-    public HomePage() {
+    public HomePage(WebDriver driver) {
+    	this.driver=driver;
         PageFactory.initElements(getDriver(), this);
         jsExecutor = (JavascriptExecutor) getDriver(); // Initialize JavascriptExecutor
     }
@@ -58,7 +62,7 @@ public class HomePage extends BaseClass {
  // Method to click on the register button
     public AccountCreationPage clickOnRegister() {
         registerButton.click();
-        return new AccountCreationPage(); // Ensure you return an instance of AccountCreationPage
+        return new AccountCreationPage(getDriver()); // Ensure you return an instance of AccountCreationPage
     }
 
     

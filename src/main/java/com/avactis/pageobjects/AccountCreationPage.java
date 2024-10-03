@@ -1,5 +1,6 @@
 package com.avactis.pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +12,7 @@ import com.avactis.base.BaseClass;
 
 public class AccountCreationPage extends BaseClass {
 	
+	WebDriver driver;
 	Action action= new Action();
 	
 	@FindBy(xpath = "//h3[text()='Create new account']")
@@ -52,7 +54,8 @@ public class AccountCreationPage extends BaseClass {
 	@FindBy(xpath="//input[@type='submit']")
 	private WebElement registerBtn;
 	
-	public AccountCreationPage() {
+	public AccountCreationPage(WebDriver driver) {
+		this.driver=driver;
 		PageFactory.initElements(getDriver(), this);
 	}
 	
@@ -91,7 +94,7 @@ public class AccountCreationPage extends BaseClass {
 	
 	public HomePage validateRegistration() throws Throwable {
 		registerBtn.click();
-		return new HomePage();
+		return new HomePage(getDriver());
 	}
 	
 	public boolean validateAcountCreatePage() throws Throwable {

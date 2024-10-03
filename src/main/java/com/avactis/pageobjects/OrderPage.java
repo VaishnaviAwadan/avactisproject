@@ -26,21 +26,23 @@ public class OrderPage extends BaseClass {
 
 	public double getUnitPrice() {
 		String unitPrice1=unitPrice.getText();
-		String unit=unitPrice1.replaceAll("[^0-9.]", "");
+		//String unit=unitPrice1.replaceAll("[^0-9.]", "");
+		String unit=unitPrice1.replaceAll("[^a-zA-Z0-9]","");
 		double finalUnitPrice=Double.parseDouble(unit);
-		return finalUnitPrice;
+		return finalUnitPrice/100;
 	}
 	
 	public double getTotalPrice() {
 		String totalPrice1=totalPrice.getText();
 		// Allow decimal points in price
-		String tot=totalPrice1.replaceAll("[^0-9.]", "");
+		//String tot=totalPrice1.replaceAll("[^0-9.]", "");
+		String tot=totalPrice1.replaceAll("[^a-zA-Z0-9]","");
 		double finalTotalPrice=Double.parseDouble(tot);
-		return finalTotalPrice;
+		return finalTotalPrice/100;
 	}
 	
 	public LoginPage clickOnCheckOut() throws Throwable {
-		action.click(getDriver(), proceedToCheckOut);
+		action.click(driver, proceedToCheckOut);
 		return new LoginPage(getDriver());
 	}
 }
