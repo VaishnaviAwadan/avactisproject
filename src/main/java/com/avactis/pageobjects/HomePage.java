@@ -30,6 +30,8 @@ public class HomePage extends BaseClass {
     @FindBy(xpath = "//a[text()='Checkout']")
     private WebElement checkout;
     
+    @FindBy(xpath = "//a[@href='http://localhost/Avactis/register.php']") // Assuming "Register" button has an ID or appropriate locator
+    private WebElement registerButton;
 
     // Methods to interact with the elements using BaseClass utility methods
 
@@ -53,7 +55,13 @@ public class HomePage extends BaseClass {
         clickElementWithJS(checkout);
     }
 
-  
+ // Method to click on the register button
+    public AccountCreationPage clickOnRegister() {
+        registerButton.click();
+        return new AccountCreationPage(); // Ensure you return an instance of AccountCreationPage
+    }
+
+    
     // Get the current URL of the page
     public String getCurrURL() {
         return getDriver().getCurrentUrl();
