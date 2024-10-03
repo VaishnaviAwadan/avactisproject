@@ -17,7 +17,7 @@ public class OrderPage extends BaseClass {
 	@FindBy(xpath= "//*[@id=\"Product_Quan\"]/table/tbody/tr[2]/td[5]/strong")
 	private WebElement totalPrice;
 	
-	@FindBy(xpath="//a[@ href=\"http://localhost/Avactis/checkout.php\"]")
+	@FindBy(xpath="//a[text()='Checkout']")
 	private WebElement proceedToCheckOut;
 	
 	public OrderPage() {
