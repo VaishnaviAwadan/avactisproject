@@ -56,7 +56,7 @@ public class LoginPage extends BaseClass {
         action.type(passwordInput, pswd);
         action.click(getDriver(), signInButton);
         Thread.sleep(2000);
-        return new AddressPage(getDriver());  // Initialize AddressPage with driver
+        return new AddressPage();  // Initialize AddressPage with driver
     }
 
     // Method to create a new account

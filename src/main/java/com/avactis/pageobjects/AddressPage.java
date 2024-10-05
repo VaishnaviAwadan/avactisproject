@@ -21,6 +21,7 @@ public class AddressPage extends BaseClass {
 	
 	public ShippingPage clickOnCheckOut() throws Throwable {
 		action.click(getDriver(), proceedToCheckOut );
-		return new shippingPage(getDriver());
+		return new ShippingPage(getDriver());
 	}
+	
 }
