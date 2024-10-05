@@ -1,5 +1,7 @@
 package com.avactis.pageobjects;
 
-public class OrderConfirmationPage {
+import com.avactis.base.BaseClass;
+
+public class OrderConfirmationPage extends BaseClass {
 
 }
