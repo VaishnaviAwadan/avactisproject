@@ -43,7 +43,7 @@ public class RegistrationTest extends BaseClass {
             "Vaishnavi",                   // First Name
             "Awadan",                      // Last Name
             "India",                       // Country
-            "Maharastra",                  // State
+            "Florida",                  // State
             "416552",                      // ZIP Code
             "Kolhapur",                    // City
             "Lane no 1",                   // Address Line 1
