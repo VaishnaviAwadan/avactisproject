@@ -16,16 +16,16 @@ public class RegistrationTest extends BaseClass {
     @BeforeMethod
     public void setup() {
         // Launch the application with the desired browser
-        launchApp(prop.getProperty("browser")); // Fetch browser from config file
-        
+        launchApp(); // Fetch browser from config file
+
         // Initialize the HomePage after launching the app
-        homePage = new HomePage(getDriver());
+        homePage = new HomePage();
     }
 
     @AfterMethod
     public void tearDown() {
         // Quit the WebDriver after the test
-        getDriver().quit();
+        driver().quit();
     }
 
     @Test

@@ -14,10 +14,10 @@ public class IndexTest extends BaseClass {
     @BeforeMethod
     public void setup() {
         // Launch the application with the desired browser
-        launchApp(prop.getProperty("browser")); // Fetch browser from config file
+        launchApp(); // Fetch browser from config file
 
         // Initialize IndexPage after launching the app
-        indexPage = new IndexPage(getDriver()); // IndexPage should be initialized here
+        indexPage = new IndexPage(); // IndexPage should be initialized here
     }
 
     @AfterMethod

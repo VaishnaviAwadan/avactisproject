@@ -7,23 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
+import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
 
 public class HomePage extends BaseClass {
 
-	WebDriver Driver;
-    private JavascriptExecutor jsExecutor;
-
-    // Constructor to initialize elements and driver
-    public HomePage(WebDriver driver) {
-    	this.driver=driver;
-        PageFactory.initElements(getDriver(), this);
-        jsExecutor = (JavascriptExecutor) getDriver(); // Initialize JavascriptExecutor
-    }
-
     // Web Elements using @FindBy annotations
-    @FindBy(xpath = "//a[text()='Sign In']")
-    private WebElement signIn;
 
     @FindBy(xpath = "//a[text()='My Account']")
     private WebElement myAccount;
@@ -37,16 +26,14 @@ public class HomePage extends BaseClass {
     @FindBy(xpath = "//a[@href='http://localhost/Avactis/register.php']") // Assuming "Register" button has an ID or appropriate locator
     private WebElement registerButton;
 
-    // Methods to interact with the elements using BaseClass utility methods
-
-    // Navigate to "Sign In" page using JavaScript
-    public void clickSignIn() {
-        clickElementWithJS(signIn);
+    public HomePage() {
+        PageFactory.initElements(driver(), this);
     }
-    
+ 
+
    // Navigate to "My Account" page using JavaScript
-    public void clickMyAccount() {
-        clickElementWithJS(myAccount);
+    public boolean validateMyAccount() throws Throwable {
+       return Action.isDisplayed(driver, myAccount);
     }
     
    // Validate if "My Cart" is displayed
@@ -62,13 +49,13 @@ public class HomePage extends BaseClass {
  // Method to click on the register button
     public AccountCreationPage clickOnRegister() {
         registerButton.click();
-        return new AccountCreationPage(getDriver()); // Ensure you return an instance of AccountCreationPage
+        return new AccountCreationPage(); // Ensure you return an instance of AccountCreationPage
     }
 
     
     // Get the current URL of the page
     public String getCurrURL() {
-        return getDriver().getCurrentUrl();
+        return driver().getCurrentUrl();
     }
 
     // Utility methods using JavascriptExecutor

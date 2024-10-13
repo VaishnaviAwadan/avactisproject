@@ -1,4 +1,6 @@
+
 package com.avactis.base;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,15 +18,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import com.avactis.utils.WaitUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-    protected WebDriver driver; // Change to protected for subclass access
-    public Properties prop; // Removed static for instance-level use
+    protected static WebDriver driver; // Change to protected for subclass access
+    public static Properties prop; // Removed static for instance-level use
     public WaitUtils waitUtils;
     public JavascriptExecutor jsExecutor; // Declare JavascriptExecutor
 
@@ -48,39 +49,41 @@ public class BaseClass {
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("Error loading config file.");
-        }
+        } 
     }
 
     // Method to launch browser and application
-    public void launchApp(String browserName) {
-        if (browserName.equalsIgnoreCase("Chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else if (browserName.equalsIgnoreCase("FireFox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        } else if (browserName.equalsIgnoreCase("IE")) {
-            WebDriverManager.iedriver().setup();
-            driver = new InternetExplorerDriver();
-        } else {
-            throw new IllegalArgumentException("Browser not supported: " + browserName);
-        }
-
+    public static void launchApp() {
+    	WebDriverManager.chromedriver().setup();
+    	String browserName=prop.getProperty("browser");
+    	if(browserName.contains("Chrome")) {
+    		driver=new ChromeDriver();
+    	}
+    	else if(browserName.contains("FireFox")){
+    		driver=new FirefoxDriver();
+    	}
+    	else if(browserName.contains("IE")){
+    		driver=new InternetExplorerDriver();
+    	}	
+        		
         // Maximize window and delete cookies
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 
+       // Action.implicitwait(driver, 10);
+       // Action.pageLoadTimeOut(driver, 30);
+        
         // Launch the URL from the config file
         driver.get(prop.getProperty("url"));
 
-        // Initialize WaitUtils and JavascriptExecutor after the driver is created
-        waitUtils = new WaitUtils(driver);
-        jsExecutor = (JavascriptExecutor) driver;
+     
     }
 
+    
+    
     // Method to get the WebDriver instance
-    public WebDriver getDriver() {
+    public WebDriver driver() {
         return driver;
     }
 
@@ -137,4 +140,9 @@ public class BaseClass {
             driver = null; // Set driver to null to avoid memory leak
         }
     }
+
+	public boolean mouseover(WebDriver driver, WebElement ele) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

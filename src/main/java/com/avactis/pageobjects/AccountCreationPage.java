@@ -58,8 +58,7 @@ public class AccountCreationPage extends BaseClass {
     private WebElement registerBtn;
 
     // Constructor to initialize elements and driver
-    public AccountCreationPage(WebDriver driver) {
-        this.driver = driver;
+    public AccountCreationPage() {
         PageFactory.initElements(driver, this);
     }
 
@@ -105,7 +104,7 @@ public class AccountCreationPage extends BaseClass {
     public HomePage validateRegistration() throws Throwable {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(registerBtn)).click();
-        return new HomePage(driver);
+        return new HomePage();
     }
 
     // Method to verify if the account creation page is displayed
