@@ -3,15 +3,9 @@ package com.avactis.pageobjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
-import java.time.Duration;
-
 public class LoginPage extends BaseClass {
-
-  
 
     // Define the WebElements on the login page
     @FindBy(xpath = "//label[text()='E-Mail:']//following::input[1]")  // Email input field

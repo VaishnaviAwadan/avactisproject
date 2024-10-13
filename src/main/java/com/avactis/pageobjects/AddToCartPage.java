@@ -1,13 +1,9 @@
 package com.avactis.pageobjects;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
-
 public class AddToCartPage extends BaseClass {
 
 Action action= new Action();
@@ -24,7 +20,11 @@ Action action= new Action();
 	@FindBy(xpath="//input[@value='Add To Wishlist']")
 	private WebElement addToWishlist;
 	
+	@FindBy(xpath= "//h2[text()='Product was added to your cart']")
+	private WebElement addToCartMessag;
 	
+	@FindBy(xpath= "//a[@href='http://localhost/Avactis/checkout.php']")
+	private WebElement clickOnCheckout;
 	
 	public AddToCartPage() {
         PageFactory.initElements(driver, this);
@@ -43,14 +43,11 @@ Action action= new Action();
 	}
 	
 	public boolean validateAddtoCart() throws Throwable {
-		action.fluentWait(driver(), addToCartMessag, 10);
-		return action.isDisplayed(driver(), addToCartMessag);
+		return Action.isDisplayed(driver, addToCartMessag);
 	}
-	
-	public OrderPage clickOnCheckOut() throws Throwable {
-		action.fluentWait(driver(), proceedToCheckOutBtn, 10);
-		action.JSClick(driver(), proceedToCheckOutBtn);
-		return new OrderPage();
+
+	public boolean validateCheckout() throws Throwable {
+		return Action.isDisplayed(driver, clickOnCheckout);
 	}
-	
+		
 }

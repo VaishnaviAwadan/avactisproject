@@ -11,7 +11,6 @@ public class searchResultPage {
 
 	public class SearchResultPage extends BaseClass {
 		
-		Action action= new Action();
 		
 		@FindBy(xpath="//*[@id=\"ProductForm_18\"]/div[2]/div[1]/img")
 		private WebElement productResult;

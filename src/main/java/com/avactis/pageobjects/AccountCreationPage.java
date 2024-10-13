@@ -7,17 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-
-import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
 
 public class AccountCreationPage extends BaseClass {
 
     WebDriver driver;
-    Action action = new Action();
-
+    
     @FindBy(xpath = "//h3[text()='Create new account']")
     private WebElement formTitle;
 
