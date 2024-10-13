@@ -16,11 +16,11 @@ import com.avactis.base.BaseClass;
 		private WebElement placeorderbtn;
 		
 		public OrderSummaryPage(WebDriver driver) {
-			PageFactory.initElements(getDriver(), this);
+			PageFactory.initElements(driver(), this);
 		}
 
 		public OrderConfirmationPage clickOnconfirmOrderBtn() throws Throwable {
-			action.click(getDriver(), placeorderbtn);
+			Action.click(driver(), placeorderbtn);
 			return new OrderConfirmationPage();
 		}
 		

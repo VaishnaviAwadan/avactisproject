@@ -17,15 +17,15 @@ public class searchResultPage {
 		private WebElement productResult;
 		
 		public SearchResultPage() {
-			PageFactory.initElements(getDriver(), this);
+			PageFactory.initElements(driver(), this);
 		}
 		
 		public boolean isProductAvailable() throws Throwable {
-			return action.isDisplayed(getDriver(), productResult);
+			return Action.isDisplayed(driver(), productResult);
 		}
 		
 		public AddToCartPage clickOnProduct() throws Throwable {
-			action.click(getDriver(), productResult);
+			Action.click(driver(), productResult);
 			return new AddToCartPage();
 		}
 }

@@ -41,53 +41,27 @@ public class LoginPage extends BaseClass {
     }
     
     // Login method for returning to HomePage
-    public HomePage login(String uname, String pswd) {
-        try {
+    public HomePage login(String uname, String pswd)throws Throwable {
             Action.type(userName, uname);
             Action.type(password, pswd);
             Action.click(driver, signInButton);
-
-            // Wait for the page to load after clicking login (e.g., by checking some element in HomePage)
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.urlContains("home")); // Example condition, adapt as per your application
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new HomePage();
+            return new HomePage();
     }
 
     // Login method with AddressPage return
     public AddressPage login(String uname, String pswd, AddressPage addressPage) {
-        try {
             Action.scrollByVisibilityOfElement(driver, userName);
             Action.type(userName, uname);
             Action.type(password, pswd);
             Action.click(driver, signInButton);
-
-            // Wait for the page to load (example, adjust according to your page logic)
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.urlContains("address"));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new AddressPage();  // Initialize AddressPage with driver
+            return new AddressPage();  // Initialize AddressPage with driver
     }
 
     // Method to create a new account
     public AccountCreationPage createNewAccount(String newEmail) {
-        try {
             Action.type(emailForNewAccount, newEmail);
             Action.click(driver, createNewAccountBtn);
-
-            // Wait for the next page to load (example, adjust according to your logic)
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.urlContains("account-creation"));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new AccountCreationPage();  // Initialize AccountCreationPage with driver
-    }
+            return new AccountCreationPage();  // Initialize AccountCreationPage with driver
+        
+}
 }

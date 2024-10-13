@@ -25,7 +25,7 @@ public class PaymentPage extends BaseClass {
 }
 	
 	public OrderSummaryPage cashOndeliveryMethod() throws Throwable {
-	action.click(driver, cashOndelivery);
+	Action.click(driver, cashOndelivery);
 	return new OrderSummaryPage(driver);
 	}
 	

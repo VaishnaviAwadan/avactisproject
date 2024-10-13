@@ -32,28 +32,28 @@ public class ShippingPage extends BaseClass {
     // Constructor to initialize the page elements
     public ShippingPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(getDriver(), this);
+        PageFactory.initElements(driver(), this);
     }
 
     // Method to check the "Shipping Address Same As" checkbox
     public void checkShippingAddressSameAs() throws Throwable {
-        action.click(getDriver(), shippingAddressSameAs);
+        Action.click(driver(), shippingAddressSameAs);
     }
 
     public void ChecktaxExemptNumber() throws Throwable{
-    	action.click(getDriver(),taxExemptNumber);
+    	Action.click(driver(),taxExemptNumber);
     }
     
     public void CheckSpecialOffer() throws Throwable{
-    	action.click(getDriver(), specialOffer);
+    	Action.click(driver(), specialOffer);
     }
     
     public void CheckNewProduct() throws Throwable{
-    	action.click(getDriver(),newProducts);
+    	Action.click(driver(),newProducts);
     }
     // Method to click on "Continue Checkout" and navigate to the PaymentPage
     public PaymentPage clickOnContinueCheckout() throws Throwable {
-        action.click(getDriver(), continueCheckout);
-        return new PaymentPage(getDriver()); // Initialize PaymentPage with WebDriver
+       Action.click(driver(), continueCheckout);
+        return new PaymentPage(driver()); // Initialize PaymentPage with WebDriver
     }
 }
