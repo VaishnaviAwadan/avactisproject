@@ -24,7 +24,7 @@ Action action= new Action();
 	private WebElement addToCartMessag;
 	
 	@FindBy(xpath= "//a[@href='http://localhost/Avactis/checkout.php']")
-	private WebElement clickOnCheckout;
+	private WebElement ckeckoutBtn;
 	
 	public AddToCartPage() {
         PageFactory.initElements(driver, this);
@@ -46,8 +46,8 @@ Action action= new Action();
 		return Action.isDisplayed(driver, addToCartMessag);
 	}
 
-	public boolean validateCheckout() throws Throwable {
-		return Action.isDisplayed(driver, clickOnCheckout);
+	public boolean clickOnCheckout() throws Throwable {
+		return Action.JSClick(driver, ckeckoutBtn);
 	}
 		
 }

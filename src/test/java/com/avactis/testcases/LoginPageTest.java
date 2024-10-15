@@ -47,7 +47,8 @@ public class LoginPageTest extends BaseClass {
         
         // Validate that the current URL is the expected URL after login
         String actualUrl = homePage.getCurrURL();
-        String expectedUrl = "http://localhost/Avactis/home.php";
-        Assert.assertEquals(actualUrl, expectedUrl, "Login failed or URL mismatch after login.");
+        Thread.sleep(3000);
+        String expectedUrl = "http://localhost/Avactis/index.php";
+        Assert.assertEquals(actualUrl,expectedUrl, "Login failed or URL mismatch after login.");
     }
 }

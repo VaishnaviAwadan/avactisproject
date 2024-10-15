@@ -113,7 +113,7 @@ public class Action extends BaseClass {
     }
 
     // JavaScript click
-    public boolean JSClick(WebDriver driver, WebElement ele) {
+    public static boolean JSClick(WebDriver driver, WebElement ele) {
         try {
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", ele);
             System.out.println("Click Action is performed");

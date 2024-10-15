@@ -1,12 +1,19 @@
 package com.avactis.pageobjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
 public class LoginPage extends BaseClass {
 
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	
     // Define the WebElements on the login page
     @FindBy(xpath = "//label[text()='E-Mail:']//following::input[1]")  // Email input field
     private WebElement userName;
@@ -36,8 +43,11 @@ public class LoginPage extends BaseClass {
     
     // Login method for returning to HomePage
     public HomePage login(String uname, String pswd)throws Throwable {
+    	    userName.clear();
             Action.type(userName, uname);
+            password.clear();
             Action.type(password, pswd);
+            wait.until(ExpectedConditions.visibilityOf(signInButton));
             Action.click(driver, signInButton);
             return new HomePage();
     }

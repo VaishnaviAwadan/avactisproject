@@ -10,7 +10,6 @@ import com.avactis.base.BaseClass;
 
 	public class OrderSummaryPage extends BaseClass {
 		
-		Action action= new Action();
 		
 		@FindBy(xpath="//input[@value='Place Order']")
 		private WebElement placeorderbtn;

@@ -1,15 +1,18 @@
 
 package com.avactis.pageobjects;
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
 
 public class IndexPage extends BaseClass {
-
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	@FindBy(xpath = "//a[text()='Sign In']") 
 	private WebElement signInBtn;
 	
@@ -28,6 +31,7 @@ public class IndexPage extends BaseClass {
 	}
 	 
 	public LoginPage clickOnSignIn() throws Throwable {
+		wait.until(ExpectedConditions.visibilityOf(signInBtn));
 		Action.click(driver, signInBtn);
 		return new LoginPage();
 	}

@@ -53,7 +53,7 @@ public class ShippingPage extends BaseClass {
     }
     // Method to click on "Continue Checkout" and navigate to the PaymentPage
     public PaymentPage clickOnContinueCheckout() throws Throwable {
-       Action.click(driver(), continueCheckout);
+        Action.click(driver(), continueCheckout);
         return new PaymentPage(driver()); // Initialize PaymentPage with WebDriver
     }
 }

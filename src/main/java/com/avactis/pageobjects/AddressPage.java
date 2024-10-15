@@ -9,7 +9,6 @@ import com.avactis.base.BaseClass;
 
 public class AddressPage extends BaseClass {
 
-	Action action = new Action();
 	
 	@FindBy(xpath ="//a[text()='Checkout']")
 	private WebElement proceedToCheckOut;
