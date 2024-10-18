@@ -53,6 +53,8 @@ public class LoginPageTest extends BaseClass {
         System.out.println("Actual URL: " + actualUrl);
         String expectedUrl = "http://localhost/Avactis/index.php";
         
+        System.out.println("Login Successfully");
+        
         // Ensure that the URL contains the expected part
         Assert.assertTrue(actualUrl.contains(expectedUrl), "Login failed or URL mismatch after login.");
     }

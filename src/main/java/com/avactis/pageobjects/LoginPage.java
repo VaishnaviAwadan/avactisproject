@@ -36,6 +36,9 @@ public class LoginPage extends BaseClass {
     @FindBy(xpath = "//button[@id='create-account']")  // Create new account button
     private WebElement createNewAccountBtn;
 
+    @FindBy(xpath = "//div[@class='note note-danger' and contains(text(), 'Account and password could not be identified')]")  // Error message for failed login (adjust XPath as per your app)
+    private WebElement loginErrorMessage;
+    
     // Constructor to initialize the page elements
     public LoginPage() {
         PageFactory.initElements(driver, this);
@@ -68,4 +71,30 @@ public class LoginPage extends BaseClass {
             return new AccountCreationPage();  // Initialize AccountCreationPage with driver
         
 }
+    // Method to check if login failed based on the presence of an error message
+    public boolean isLoginFailed() {
+        try {
+            // Wait for the error message to be visible if login fails
+			wait.until(ExpectedConditions.visibilityOf(loginErrorMessage));
+            // If the error message is displayed, return true indicating login failure
+            return loginErrorMessage.isDisplayed();
+        } catch (Exception e) {
+            // If no error message is found, login did not fail
+            return false;
+        }
 }
+
+	
+		  // Method to retrieve the error message text when login fails
+	    public String getErrorMessage() {
+	        try {
+				// Wait for the error message to be visible
+	            wait.until(ExpectedConditions.visibilityOf(loginErrorMessage));
+	            // Return the text of the error message
+	            return loginErrorMessage.getText();
+	        } catch (Exception e) {
+	            // If no error message is found, return a default message
+	            return "No error message displayed.";
+	        }
+	    }
+	}
