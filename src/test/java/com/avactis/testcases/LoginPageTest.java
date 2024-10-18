@@ -36,7 +36,7 @@ public class LoginPageTest extends BaseClass {
         loginPage = indexPage.clickOnSignIn();
         
         // Wait for the login page to load
-        Thread.sleep(3000);
+       // Thread.sleep(3000);
         
         // Print the credentials being used for debugging
         System.out.println("Username: " + prop.getProperty("userName"));

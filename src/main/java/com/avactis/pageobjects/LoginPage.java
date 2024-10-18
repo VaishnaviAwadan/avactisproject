@@ -36,7 +36,7 @@ public class LoginPage extends BaseClass {
     @FindBy(xpath = "//button[@id='create-account']")  // Create new account button
     private WebElement createNewAccountBtn;
 
-    @FindBy(xpath = "//div[@class='note note-danger' and contains(text(), 'Account and password could not be identified')]")  // Error message for failed login (adjust XPath as per your app)
+    @FindBy(xpath = "//div[@class='note note-danger' and contains(text(), 'Account and password could not be identified. Try again or create an account')]")  // Error message for failed login (adjust XPath as per your app)
     private WebElement loginErrorMessage;
     
     // Constructor to initialize the page elements
