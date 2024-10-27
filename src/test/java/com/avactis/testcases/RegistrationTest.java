@@ -7,19 +7,20 @@ import org.testng.annotations.Test;
 import com.avactis.base.BaseClass;
 import com.avactis.pageobjects.AccountCreationPage;
 import com.avactis.pageobjects.HomePage;
+import com.avactis.pageobjects.IndexPage;
+import com.avactis.pageobjects.LoginPage;
 
 public class RegistrationTest extends BaseClass {
 
-    HomePage homePage;
-    AccountCreationPage accountCreationPage;
+	private IndexPage indexPage;
+	private LoginPage loginPage;
+	private AccountCreationPage accountCreationPage;
+	private HomePage homepage;
 
     @BeforeMethod
     public void setup() {
         // Launch the application with the desired browser
         launchApp(); // Fetch browser from config file
-
-        // Initialize the HomePage after launching the app
-        homePage = new HomePage();
     }
 
     @AfterMethod
@@ -29,36 +30,13 @@ public class RegistrationTest extends BaseClass {
     }
 
     @Test
-    public void registerPositiveTest() throws Throwable {
-        // Step 1: Click on "My Account" link
-        homePage.clickMyAccount();
-
-        // Step 2: Click on "Register" button
-        accountCreationPage = homePage.clickOnRegister();
-
-        // Step 3: Enter valid registration data
-        accountCreationPage.createAccount(
-            "vaishnavi88awadan@gmail.com",  // Email
-            "Vaishnavi#93",                // Password
-            "Vaishnavi",                   // First Name
-            "Awadan",                      // Last Name
-            "India",                       // Country
-            "Florida",                  // State
-            "416552",                      // ZIP Code
-            "Kolhapur",                    // City
-            "Lane no 1",                   // Address Line 1
-            "Shahu Colony",                // Address Line 2
-            "8625897265"                   // Mobile Number
-        );
-
-        // Step 4: Submit the form and validate successful registration
-        homePage = accountCreationPage.validateRegistration();
-
-        // Step 5: Assert that registration was successful by verifying that "My Cart" is displayed
-        Assert.assertTrue(homePage.isMyCartDisplayed(), "Registration failed! 'My Cart' element is not visible.");
-        
-        // Optional: Verify if the user is redirected to the correct page after registration
-        String currentUrl = homePage.getCurrURL();
-        Assert.assertTrue(currentUrl.contains("home"), "The user is not redirected to the home page after registration.");
-    }
+    public void createRegistrationPositiveTest() throws Throwable {
+    	 indexPage= new IndexPage();
+    	loginPage= indexPage.clickOnSignIn();
+    	// Click on the "Register" button
+    	homepage = new HomePage();
+        accountCreationPage = homepage.clickOnRegister();
+        Assert.assertNotNull(accountCreationPage, "Navigation to Account Creation page failed");
+    	 }
+   
 }

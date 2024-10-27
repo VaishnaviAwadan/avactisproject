@@ -21,6 +21,9 @@ public class HomePage extends BaseClass {
     @FindBy(xpath = "//a[@href='http://localhost/Avactis/register.php']") // Assuming "Register" button has an ID or appropriate locator
     private WebElement registerButton;
 
+    @FindBy(xpath = "//button[@type='button']")
+    private WebElement register;
+    
     public HomePage() {
         PageFactory.initElements(driver(), this);
     }
@@ -41,9 +44,13 @@ public class HomePage extends BaseClass {
         return Action.isDisplayed(driver,  checkout);
     }
 
+    public boolean validateRegister() {
+    	return Action.isDisplayed(driver, register);
+    }
+    
  // Method to click on the register button
     public AccountCreationPage clickOnRegister() {
-        registerButton.click();
+        register.click();
         return new AccountCreationPage(); // Ensure you return an instance of AccountCreationPage
     }
 
