@@ -36,4 +36,14 @@ public class HomePageTest  extends BaseClass{
 	    	boolean result=homePage.validateMyCart();
 	    	 Assert.assertTrue(result);
 	    }
+	    
+	    @Test
+	    public void  validateCheckout() throws Throwable{
+	    	indexPage = new IndexPage();
+	    	loginPage=indexPage.clickOnSignIn();
+	    	homePage=loginPage.login(prop.getProperty("userName"),prop.getProperty("password"));
+	    	boolean result = homePage.validateMyAccount();
+	    	Assert.assertTrue(result);
+	    }
+
 }
