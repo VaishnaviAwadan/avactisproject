@@ -51,7 +51,7 @@ public class LoginPageTest extends BaseClass {
         // Validate that the current URL is the expected URL after login
         String actualUrl = homePage.getCurrURL();
         System.out.println("Actual URL: " + actualUrl);
-        String expectedUrl = "http://localhost/Avactis/index.php";
+        String expectedUrl = "http://localhost/Avactis/home.php";
         
         System.out.println("Login Successfully");
         
