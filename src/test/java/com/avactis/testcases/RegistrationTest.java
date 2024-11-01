@@ -38,5 +38,37 @@ public class RegistrationTest extends BaseClass {
         accountCreationPage = homepage.clickOnRegister();
         Assert.assertNotNull(accountCreationPage, "Navigation to Account Creation page failed");
     	 }
-   
+
+    
+    
+ // Define test data for registration
+    String email = "vaishnavi88awadan@gmail.com";
+    String password = "Vaishnavi@93";
+    String firstName = "Vaishnavi";
+    String lastName = "Awadan";
+    String country = "India";
+    String state = "Maharastra";
+    String zip = "416552";
+    String city = "Kolhapur";
+    String address1 = "Lane no 1";
+    String address2 = "Shahu colony";
+    String mobile = "8625897265";
+    
+ 
+    // Enter data in Account Creation form
+    public void createAccount(String email, String pswd, String fName, String lName,
+            String country, String state, String zip, String city,
+            String add1, String add2, String mobile) throws Throwable {
+
+    System.out.println("value entered");
+    Thread.sleep(3000);
+    // Submit the form and validate successful registration
+    homepage = accountCreationPage.validateRegistration();
+    Assert.assertNotNull(homepage, "Registration failed: HomePage was not reached after registration.");
+
+    // Additional validation (Optional): Check if the user is redirected to the HomePage
+    String currentUrl = homepage.getCurrURL();
+    Assert.assertTrue(currentUrl.contains("home"), "User not redirected to home page after registration.");
 }
+}
+
