@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.avactis.base.BaseClass;
-import com.avactis.pageobjects.HomePage;
 import com.avactis.pageobjects.IndexPage;
 import com.avactis.pageobjects.LoginPage;
 
@@ -15,7 +14,7 @@ public class LoginNegativeTest extends BaseClass {
 
 	 private IndexPage indexPage;
 	    private LoginPage loginPage;
-	    private HomePage homePage;
+	   // private HomePage homePage;
 
 	    @BeforeMethod
 	    public void setup() {
