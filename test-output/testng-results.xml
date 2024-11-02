@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-02T16:25:29 IST" name="Default suite" finished-at="2024-11-02T16:26:02 IST" duration-ms="32699">
+  <suite started-at="2024-11-02T16:53:17 IST" name="Default suite" finished-at="2024-11-02T16:53:45 IST" duration-ms="27517">
     <groups>
     </groups>
-    <test started-at="2024-11-02T16:25:29 IST" name="Default test" finished-at="2024-11-02T16:26:02 IST" duration-ms="32699">
+    <test started-at="2024-11-02T16:53:17 IST" name="Default test" finished-at="2024-11-02T16:53:45 IST" duration-ms="27517">
       <class name="com.avactis.testcases.RegistrationPositiveTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:25:30 IST" name="setup" finished-at="2024-11-02T16:25:34 IST" duration-ms="4265" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:53:17 IST" name="setup" finished-at="2024-11-02T16:53:21 IST" duration-ms="4063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createRegistrationPositiveTest()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:25:34 IST" name="createRegistrationPositiveTest" finished-at="2024-11-02T16:25:39 IST" duration-ms="4892" status="PASS">
+        <test-method signature="createRegistrationPositiveTest()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:53:22 IST" name="createRegistrationPositiveTest" finished-at="2024-11-02T16:53:26 IST" duration-ms="4837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRegistrationPositiveTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:25:39 IST" name="tearDown" finished-at="2024-11-02T16:25:39 IST" duration-ms="194" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:53:26 IST" name="tearDown" finished-at="2024-11-02T16:53:27 IST" duration-ms="210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:25:39 IST" name="setup" finished-at="2024-11-02T16:25:43 IST" duration-ms="3508" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:53:27 IST" name="setup" finished-at="2024-11-02T16:53:30 IST" duration-ms="3606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="registrationTest()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:25:43 IST" name="registrationTest" finished-at="2024-11-02T16:26:02 IST" duration-ms="19420" status="PASS">
+        <test-method signature="registrationTest()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:53:30 IST" name="registrationTest" finished-at="2024-11-02T16:53:45 IST" duration-ms="14422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:26:02 IST" name="tearDown" finished-at="2024-11-02T16:26:02 IST" duration-ms="216" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegistrationPositiveTest@30f842ca]" started-at="2024-11-02T16:53:45 IST" name="tearDown" finished-at="2024-11-02T16:53:45 IST" duration-ms="192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

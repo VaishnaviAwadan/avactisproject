@@ -63,52 +63,13 @@ public class AccountCreationPage extends BaseClass {
         PageFactory.initElements(driver, this);
     }
 
-    /* Method to create a new account
-    public void createAccount(
-        String email,
-        String pswd,
-        String fName,
-        String lName,
-        String country,
-        String state,
-        String zip,
-        String city,
-        String add1,
-        String add2,
-        String mobile
-    ) throws Throwable {
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-        // Wait for elements to be visible and interact with them
-        wait.until(ExpectedConditions.visibilityOf(emailID)).sendKeys(email);
-        wait.until(ExpectedConditions.visibilityOf(password)).sendKeys(pswd);
-        wait.until(ExpectedConditions.visibilityOf(firstName)).sendKeys(fName);
-        wait.until(ExpectedConditions.visibilityOf(lastName)).sendKeys(lName);
-
-        // Select country from dropdown
-        Select countryDropdown = new Select(wait.until(ExpectedConditions.visibilityOf(countryName)));
-        countryDropdown.selectByVisibleText(country);
-
-        // Select state from dropdown
-        Select stateDropdown = new Select(wait.until(ExpectedConditions.visibilityOf(stateName)));
-        stateDropdown.selectByVisibleText(state);
-
-        // Fill in other details
-        wait.until(ExpectedConditions.visibilityOf(postCode)).sendKeys(zip);
-        wait.until(ExpectedConditions.visibilityOf(cityName)).sendKeys(city);
-        wait.until(ExpectedConditions.visibilityOf(address1)).sendKeys(add1);
-        wait.until(ExpectedConditions.visibilityOf(address2)).sendKeys(add2);
-        wait.until(ExpectedConditions.visibilityOf(mobileNo)).sendKeys(mobile);
-    }*/
-
- // Login method for returning to HomePage
+    // Login method for returning to HomePage
     public HomePage registration(String email, String pswd, String rPswd, String fName, String lName, String country, String state, String zip, String city, String add1, String add2, String mobile)throws Throwable {
     	   // userName.clear();
     		wait.until(ExpectedConditions.visibilityOf(emailID));
     	    emailID.clear();
             Action.type(emailID, email);
-          
-            //Thread.sleep(3000);
+         
            // password.clear();
             Action.type(password, pswd);
             Action.type(rePassword, rPswd);
@@ -140,8 +101,6 @@ public class AccountCreationPage extends BaseClass {
             Action.type(mobileNo, mobile);
             
             wait.until(ExpectedConditions.elementToBeClickable(registerBtn)).click();
-            
-            
             return new HomePage();
     }
     

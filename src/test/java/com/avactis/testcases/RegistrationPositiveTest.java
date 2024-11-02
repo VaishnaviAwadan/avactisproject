@@ -1,4 +1,7 @@
 package com.avactis.testcases;
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -30,7 +33,7 @@ public class RegistrationPositiveTest extends BaseClass {
     
     @Test
     public void createRegistrationPositiveTest() throws Throwable {
-    	 indexPage= new IndexPage();
+    	indexPage= new IndexPage();
     	indexPage.clickOnSignIn();
     	// Click on the "Register" button
     	homePage = new HomePage();
@@ -43,9 +46,21 @@ public class RegistrationPositiveTest extends BaseClass {
 		indexPage= new IndexPage();
 		indexPage.clickOnSignIn();
 		homePage = new HomePage();
-		//accountCreationPage = new AccountCreationPage();
         accountCreationPage = homePage.clickOnRegister();
-       // Assert.assertNotNull(accountCreationPage, "Navigation to Account Creation page failed");
+        
+        System.out.println("emailID: " + prop.getProperty("email"));
+        System.out.println("password: " + prop.getProperty("pswd"));
+        System.out.println("rePassword: " + prop.getProperty("rPswd"));
+        System.out.println("firstName: " + prop.getProperty("fName"));
+        System.out.println("lastName: " + prop.getProperty("lName"));
+        System.out.println("countryName: " + prop.getProperty("country"));
+        System.out.println("stateName: " + prop.getProperty("state"));
+        System.out.println("postCode: " + prop.getProperty("zip"));
+        System.out.println("cityName: " + prop.getProperty("city"));
+        System.out.println("address1: " + prop.getProperty("add1"));
+        System.out.println("address2: " + prop.getProperty("add2"));
+        System.out.println("mobileNo: " + prop.getProperty("mobile"));
+        
 			homePage=accountCreationPage.registration
 				(prop.getProperty("email"),
 				prop.getProperty("pswd"),
@@ -61,13 +76,14 @@ public class RegistrationPositiveTest extends BaseClass {
 				prop.getProperty("mobile")
     );
 		
-			Thread.sleep(5000);
+			
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			
 			String actualUrl = homePage.getCurrURL();
 	        System.out.println("Actual URL: " + actualUrl);
 	        String expectedUrl = "http://localhost/Avactis/home.php";
-			 System.out.println("Register Successfully");
-			 Assert.assertTrue(actualUrl.contains(expectedUrl), "Login failed or URL mismatch after login.");
+			System.out.println("Register Successfully");
+			Assert.assertTrue(actualUrl.contains(expectedUrl), "Login failed or URL mismatch after login.");
     
 }
 }
