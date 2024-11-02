@@ -41,18 +41,18 @@ public class RegistrationTest extends BaseClass {
 
     
     
- // Define test data for registration
+ /* Define test data for registration
     String email = "vaishnavi88awadan@gmail.com";
-    String password = "Vaishnavi@93";
-    String firstName = "Vaishnavi";
-    String lastName = "Awadan";
+    String pswd = "@Vaishnavi#93";
+    String fName = "Vaishnavi";
+    String lName = "Awadan";
     String country = "India";
     String state = "Maharastra";
     String zip = "416552";
     String city = "Kolhapur";
-    String address1 = "Lane no 1";
-    String address2 = "Shahu colony";
-    String mobile = "8625897265";
+    String add1 = "Lane no 1";
+    String add2 = "Shahu colony";
+    String mobile = "8625897265";*/
     
  
     // Enter data in Account Creation form
