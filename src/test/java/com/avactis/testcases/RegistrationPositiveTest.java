@@ -49,6 +49,7 @@ public class RegistrationPositiveTest extends BaseClass {
 			homePage=accountCreationPage.registration
 				(prop.getProperty("email"),
 				prop.getProperty("pswd"),
+				prop.getProperty("rPswd"),
 				prop.getProperty("fName"),
 				prop.getProperty("lName"),
 				prop.getProperty("country"),
@@ -59,9 +60,14 @@ public class RegistrationPositiveTest extends BaseClass {
 				prop.getProperty("add2"),
 				prop.getProperty("mobile")
     );
-		//Assert.assertEquals("http://automationpractice.com/index.php?controller=my-account", homePage.getCurrURL());
 		
-
+			Thread.sleep(5000);
+			
+			String actualUrl = homePage.getCurrURL();
+	        System.out.println("Actual URL: " + actualUrl);
+	        String expectedUrl = "http://localhost/Avactis/home.php";
+			 System.out.println("Register Successfully");
+			 Assert.assertTrue(actualUrl.contains(expectedUrl), "Login failed or URL mismatch after login.");
     
 }
 }

@@ -1,6 +1,4 @@
 package com.avactis.pageobjects;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,13 +6,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
 
 public class AccountCreationPage extends BaseClass {
 
-    WebDriver driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     
     @FindBy(xpath = "//h3[text()='Create new account']")
@@ -26,13 +25,16 @@ public class AccountCreationPage extends BaseClass {
     @FindBy(name = "customer_info[Customer][Password]")
     private WebElement password;
 
+    @FindBy(name = "customer_info[Customer][RePassword]")
+    private WebElement rePassword;
+    
     @FindBy(name = "customer_info[Customer][FirstName]")
     private WebElement firstName;
 
     @FindBy(name = "customer_info[Customer][LastName]")
     private WebElement lastName;
 
-    @FindBy(xpath = "//select[@name='customer_info[Customer][State]']")
+    @FindBy(name = "customer_info[Customer][Country]")
     private WebElement countryName;
 
     @FindBy(name = "customer_info[Customer][State]")
@@ -100,23 +102,35 @@ public class AccountCreationPage extends BaseClass {
     }*/
 
  // Login method for returning to HomePage
-    public HomePage registration(String email, String pswd, String fName, String lName, String country, String state, String zip, String city, String add1, String add2, String mobile)throws Throwable {
+    public HomePage registration(String email, String pswd, String rPswd, String fName, String lName, String country, String state, String zip, String city, String add1, String add2, String mobile)throws Throwable {
     	   // userName.clear();
+    		wait.until(ExpectedConditions.visibilityOf(emailID));
     	    emailID.clear();
             Action.type(emailID, email);
-            wait.until(ExpectedConditions.visibilityOf(emailID));
-            Thread.sleep(3000);
+          
+            //Thread.sleep(3000);
            // password.clear();
             Action.type(password, pswd);
+            Action.type(rePassword, rPswd);
             Action.type(firstName, fName);
             Action.type(lastName, lName);
             
             // Select dropdown options
             Select countryDropdown = new Select(wait.until(ExpectedConditions.visibilityOf(countryName)));
-            countryDropdown.selectByVisibleText(country);
-
-            Select stateDropdown = new Select(wait.until(ExpectedConditions.visibilityOf(stateName)));
-            stateDropdown.selectByVisibleText(state);
+            List<WebElement> options = countryDropdown.getOptions();
+            System.out.println("Available countries:");
+            for (WebElement option : options) {
+                System.out.println(option.getText());
+            }
+            
+            // Select the state
+            try {
+                Select stateDropdown = new Select(wait.until(ExpectedConditions.visibilityOf(stateName)));
+                stateDropdown.selectByVisibleText(state);
+            } catch (NoSuchElementException e) {
+                System.out.println("State selection failed for: " + state);
+                e.printStackTrace();
+            }
 
             // Populate remaining fields
             Action.type(postCode, zip);
@@ -126,6 +140,7 @@ public class AccountCreationPage extends BaseClass {
             Action.type(mobileNo, mobile);
             
             wait.until(ExpectedConditions.elementToBeClickable(registerBtn)).click();
+            
             
             return new HomePage();
     }
