@@ -1,0 +1,1 @@
+{"uuid":"aa471a36-caf7-47fd-987d-119ccb75f5e0","name":"Test.testng.IndexTest.setup","children":["1538fb61-04f1-4236-a29c-5f2198ef1a75"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1730643245382,"stop":1730643247721}],"afters":[],"start":1730643245382,"stop":1730643247721}
