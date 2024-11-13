@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.avactis.actiondriver.Action;
 import com.avactis.base.BaseClass;
 
-public class searchResultPage {
 
 	public class SearchResultPage extends BaseClass {
 		
@@ -27,5 +26,4 @@ public class searchResultPage {
 			Action.click(driver(), productResult);
 			return new AddToCartPage();
 		}
-}
 }

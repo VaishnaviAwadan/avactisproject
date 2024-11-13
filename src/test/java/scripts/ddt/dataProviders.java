@@ -72,7 +72,7 @@ public class dataProviders {
 	  
 	  @DataProvider(name = "dataFromCSV")
 		public Iterator providesDataFromCSV() throws IOException {
-			Collection<String[]> returnData = getTestDataFromCSV("src/test/resources/TestData/products.csv");
+			Collection<String[]> returnData = getTestDataFromCSV("src/test/resources/TestData/AvactisProducts.csv");
 			return returnData.iterator();
 		}
 	  
@@ -103,6 +103,8 @@ public class dataProviders {
 	      new Object[] { 1, "a" },
 	      new Object[] { 2, "b" },
 	    };
+	    
+	    
 	
 }
 }

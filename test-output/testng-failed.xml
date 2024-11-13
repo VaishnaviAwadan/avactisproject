@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="scripts.ddt.DDTExampleAvactis">
+      <class name="com.avactis.testcases.RegisteredUserTest">
         <methods>
-          <include name="afterMethod"/>
-          <include name="loginToNicheThyselfCSV"/>
-          <include name="beforeMethod"/>
+          <include name="RegisteredUser" invocation-numbers="0 1 2"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- scripts.ddt.DDTExampleAvactis -->
+      </class> <!-- com.avactis.testcases.RegisteredUserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

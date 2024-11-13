@@ -1,133 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-09T21:41:16 IST" name="Default suite" finished-at="2024-11-09T21:41:28 IST" duration-ms="11597">
+  <suite started-at="2024-11-13T22:34:39 IST" name="Default suite" finished-at="2024-11-13T22:34:58 IST" duration-ms="19313">
     <groups>
     </groups>
-    <test started-at="2024-11-09T21:41:16 IST" name="Default test" finished-at="2024-11-09T21:41:28 IST" duration-ms="11597">
-      <class name="scripts.ddt.DDTExampleAvactis">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:16 IST" name="beforeMethod" finished-at="2024-11-09T21:41:18 IST" duration-ms="1401" status="PASS">
+    <test started-at="2024-11-13T22:34:39 IST" name="Default test" finished-at="2024-11-13T22:34:58 IST" duration-ms="19313">
+      <class name="com.avactis.testcases.RegisteredUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:39 IST" name="setup" finished-at="2024-11-13T22:34:46 IST" duration-ms="7744" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="f(java.lang.Integer,java.lang.String)[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:18 IST" name="f" data-provider="dp" finished-at="2024-11-09T21:41:18 IST" duration-ms="91" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:47 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-13T22:34:47 IST" duration-ms="114" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[T-Shirt-1]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[a]]>
+                <![CDATA[ 1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ 25.99]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problems: 
+The method clickOnCheckOut() is undefined for the type AddToCartPage
+The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
+The method clickOnPaymentMethod() is undefined for the type PaymentPage
+The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
+Assert cannot be resolved
+Log cannot be resolved
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problems: 
+The method clickOnCheckOut() is undefined for the type AddToCartPage
+The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
+The method clickOnPaymentMethod() is undefined for the type PaymentPage
+The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
+Assert cannot be resolved
+Log cannot be resolved
+
+at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:56)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:18 IST" name="afterMethod" finished-at="2024-11-09T21:41:18 IST" duration-ms="296" status="PASS">
+        </test-method> <!-- RegisteredUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:47 IST" name="tearDown" finished-at="2024-11-13T22:34:47 IST" duration-ms="253" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:18 IST" name="beforeMethod" finished-at="2024-11-09T21:41:19 IST" duration-ms="865" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:47 IST" name="setup" finished-at="2024-11-13T22:34:52 IST" duration-ms="5221" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="f(java.lang.Integer,java.lang.String)[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:19 IST" name="f" data-provider="dp" finished-at="2024-11-09T21:41:19 IST" duration-ms="4" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:52 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-13T22:34:52 IST" duration-ms="5" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[Apple iMac Desktop]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[b]]>
+                <![CDATA[ 1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ 1999]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problems: 
+The method clickOnCheckOut() is undefined for the type AddToCartPage
+The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
+The method clickOnPaymentMethod() is undefined for the type PaymentPage
+The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
+Assert cannot be resolved
+Log cannot be resolved
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problems: 
+The method clickOnCheckOut() is undefined for the type AddToCartPage
+The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
+The method clickOnPaymentMethod() is undefined for the type PaymentPage
+The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
+Assert cannot be resolved
+Log cannot be resolved
+
+at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:56)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:19 IST" name="afterMethod" finished-at="2024-11-09T21:41:20 IST" duration-ms="387" status="PASS">
+        </test-method> <!-- RegisteredUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:52 IST" name="tearDown" finished-at="2024-11-13T22:34:52 IST" duration-ms="214" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:20 IST" name="beforeMethod" finished-at="2024-11-09T21:41:21 IST" duration-ms="1019" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:52 IST" name="setup" finished-at="2024-11-13T22:34:58 IST" duration-ms="5343" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="loginToNicheThyselfCSV(java.lang.String,java.lang.String)[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:21 IST" name="loginToNicheThyselfCSV" data-provider="dataFromCSV" finished-at="2024-11-09T21:41:22 IST" duration-ms="1351" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:58 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-13T22:34:58 IST" duration-ms="8" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stc]]>
+                <![CDATA[Dell Inspiron Slim Desktop]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[ 12345]]>
+                <![CDATA[ 1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ 449]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problems: 
+The method clickOnCheckOut() is undefined for the type AddToCartPage
+The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
+The method clickOnPaymentMethod() is undefined for the type PaymentPage
+The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
+Assert cannot be resolved
+Log cannot be resolved
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problems: 
+The method clickOnCheckOut() is undefined for the type AddToCartPage
+The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
+The method clickOnPaymentMethod() is undefined for the type PaymentPage
+The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
+Assert cannot be resolved
+Log cannot be resolved
+
+at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:56)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToNicheThyselfCSV -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:22 IST" name="afterMethod" finished-at="2024-11-09T21:41:22 IST" duration-ms="380" status="PASS">
+        </test-method> <!-- RegisteredUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:58 IST" name="tearDown" finished-at="2024-11-13T22:34:58 IST" duration-ms="201" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:22 IST" name="beforeMethod" finished-at="2024-11-09T21:41:23 IST" duration-ms="936" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="loginToNicheThyselfCSV(java.lang.String,java.lang.String)[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:23 IST" name="loginToNicheThyselfCSV" data-provider="dataFromCSV" finished-at="2024-11-09T21:41:25 IST" duration-ms="1662" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[vaishnavi]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[987]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginToNicheThyselfCSV -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:25 IST" name="afterMethod" finished-at="2024-11-09T21:41:25 IST" duration-ms="363" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:25 IST" name="beforeMethod" finished-at="2024-11-09T21:41:26 IST" duration-ms="900" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="loginToNicheThyselfCSV(java.lang.String,java.lang.String)[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:26 IST" name="loginToNicheThyselfCSV" data-provider="dataFromCSV" finished-at="2024-11-09T21:41:28 IST" duration-ms="1353" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[456]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginToNicheThyselfCSV -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:scripts.ddt.DDTExampleAvactis@23e84203]" started-at="2024-11-09T21:41:28 IST" name="afterMethod" finished-at="2024-11-09T21:41:28 IST" duration-ms="413" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- scripts.ddt.DDTExampleAvactis -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.avactis.testcases.RegisteredUserTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
