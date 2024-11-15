@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-13T22:34:39 IST" name="Default suite" finished-at="2024-11-13T22:34:58 IST" duration-ms="19313">
+  <suite started-at="2024-11-14T23:49:31 IST" name="Default suite" finished-at="2024-11-14T23:49:49 IST" duration-ms="17653">
     <groups>
     </groups>
-    <test started-at="2024-11-13T22:34:39 IST" name="Default test" finished-at="2024-11-13T22:34:58 IST" duration-ms="19313">
+    <test started-at="2024-11-14T23:49:31 IST" name="Default test" finished-at="2024-11-14T23:49:49 IST" duration-ms="17653">
       <class name="com.avactis.testcases.RegisteredUserTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:39 IST" name="setup" finished-at="2024-11-13T22:34:46 IST" duration-ms="7744" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:31 IST" name="setup" finished-at="2024-11-14T23:49:37 IST" duration-ms="6183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:47 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-13T22:34:47 IST" duration-ms="114" status="FAIL">
+        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:38 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-14T23:49:38 IST" duration-ms="99" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -32,24 +32,42 @@
           <exception class="java.lang.Error">
             <message>
               <![CDATA[Unresolved compilation problems: 
-The method clickOnCheckOut() is undefined for the type AddToCartPage
-The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
-The method clickOnPaymentMethod() is undefined for the type PaymentPage
-The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
-Assert cannot be resolved
-Log cannot be resolved
+ProductPage cannot be resolved to a type
+The method searchProduct(String) is undefined for the type HomePage
+quantity cannot be resolved to a variable
+CartPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+CheckOutPage cannot be resolved to a type
+expectedPrice cannot be resolved to a variable
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+The method getOrderID() is undefined for the type OrderConfirmationPage
+AdminOrderPage cannot be resolved to a type
+AdminOrderPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
 ]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Error: Unresolved compilation problems: 
-The method clickOnCheckOut() is undefined for the type AddToCartPage
-The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
-The method clickOnPaymentMethod() is undefined for the type PaymentPage
-The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
-Assert cannot be resolved
-Log cannot be resolved
+ProductPage cannot be resolved to a type
+The method searchProduct(String) is undefined for the type HomePage
+quantity cannot be resolved to a variable
+CartPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+CheckOutPage cannot be resolved to a type
+expectedPrice cannot be resolved to a variable
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+The method getOrderID() is undefined for the type OrderConfirmationPage
+AdminOrderPage cannot be resolved to a type
+AdminOrderPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
 
-at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:56)
+at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:58)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -82,15 +100,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RegisteredUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:47 IST" name="tearDown" finished-at="2024-11-13T22:34:47 IST" duration-ms="253" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:38 IST" name="tearDown" finished-at="2024-11-14T23:49:38 IST" duration-ms="163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:47 IST" name="setup" finished-at="2024-11-13T22:34:52 IST" duration-ms="5221" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:38 IST" name="setup" finished-at="2024-11-14T23:49:43 IST" duration-ms="5247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:52 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-13T22:34:52 IST" duration-ms="5" status="FAIL">
+        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:43 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-14T23:49:43 IST" duration-ms="4" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -111,24 +129,42 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <exception class="java.lang.Error">
             <message>
               <![CDATA[Unresolved compilation problems: 
-The method clickOnCheckOut() is undefined for the type AddToCartPage
-The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
-The method clickOnPaymentMethod() is undefined for the type PaymentPage
-The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
-Assert cannot be resolved
-Log cannot be resolved
+ProductPage cannot be resolved to a type
+The method searchProduct(String) is undefined for the type HomePage
+quantity cannot be resolved to a variable
+CartPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+CheckOutPage cannot be resolved to a type
+expectedPrice cannot be resolved to a variable
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+The method getOrderID() is undefined for the type OrderConfirmationPage
+AdminOrderPage cannot be resolved to a type
+AdminOrderPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
 ]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Error: Unresolved compilation problems: 
-The method clickOnCheckOut() is undefined for the type AddToCartPage
-The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
-The method clickOnPaymentMethod() is undefined for the type PaymentPage
-The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
-Assert cannot be resolved
-Log cannot be resolved
+ProductPage cannot be resolved to a type
+The method searchProduct(String) is undefined for the type HomePage
+quantity cannot be resolved to a variable
+CartPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+CheckOutPage cannot be resolved to a type
+expectedPrice cannot be resolved to a variable
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+The method getOrderID() is undefined for the type OrderConfirmationPage
+AdminOrderPage cannot be resolved to a type
+AdminOrderPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
 
-at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:56)
+at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:58)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -161,15 +197,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RegisteredUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:52 IST" name="tearDown" finished-at="2024-11-13T22:34:52 IST" duration-ms="214" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:43 IST" name="tearDown" finished-at="2024-11-14T23:49:43 IST" duration-ms="172" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:52 IST" name="setup" finished-at="2024-11-13T22:34:58 IST" duration-ms="5343" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:43 IST" name="setup" finished-at="2024-11-14T23:49:49 IST" duration-ms="5418" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:58 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-13T22:34:58 IST" duration-ms="8" status="FAIL">
+        <test-method signature="RegisteredUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:49 IST" name="RegisteredUser" data-provider="dataFromCSV" finished-at="2024-11-14T23:49:49 IST" duration-ms="7" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -190,24 +226,42 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <exception class="java.lang.Error">
             <message>
               <![CDATA[Unresolved compilation problems: 
-The method clickOnCheckOut() is undefined for the type AddToCartPage
-The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
-The method clickOnPaymentMethod() is undefined for the type PaymentPage
-The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
-Assert cannot be resolved
-Log cannot be resolved
+ProductPage cannot be resolved to a type
+The method searchProduct(String) is undefined for the type HomePage
+quantity cannot be resolved to a variable
+CartPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+CheckOutPage cannot be resolved to a type
+expectedPrice cannot be resolved to a variable
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+The method getOrderID() is undefined for the type OrderConfirmationPage
+AdminOrderPage cannot be resolved to a type
+AdminOrderPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
 ]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Error: Unresolved compilation problems: 
-The method clickOnCheckOut() is undefined for the type AddToCartPage
-The method clickOnProceedToCheckOut() is undefined for the type ShippingPage
-The method clickOnPaymentMethod() is undefined for the type PaymentPage
-The method validateConfirmMessage() is undefined for the type OrderConfirmationPage
-Assert cannot be resolved
-Log cannot be resolved
+ProductPage cannot be resolved to a type
+The method searchProduct(String) is undefined for the type HomePage
+quantity cannot be resolved to a variable
+CartPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+CheckOutPage cannot be resolved to a type
+expectedPrice cannot be resolved to a variable
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
+The method getOrderID() is undefined for the type OrderConfirmationPage
+AdminOrderPage cannot be resolved to a type
+AdminOrderPage cannot be resolved to a type
+quantity cannot be resolved to a variable
+expectedPrice cannot be resolved to a variable
 
-at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:56)
+at com.avactis.testcases.RegisteredUserTest.RegisteredUser(RegisteredUserTest.java:58)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -240,7 +294,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RegisteredUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-13T22:34:58 IST" name="tearDown" finished-at="2024-11-13T22:34:58 IST" duration-ms="201" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.avactis.testcases.RegisteredUserTest@4d0d9fe7]" started-at="2024-11-14T23:49:49 IST" name="tearDown" finished-at="2024-11-14T23:49:49 IST" duration-ms="158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

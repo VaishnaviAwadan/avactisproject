@@ -19,7 +19,10 @@ public class PaymentPage extends BaseClass {
 	@FindBy(xpath = "//input[@value='BCE5D24D-666C-43CA-94A0-D6F775903BE2_3']")
 	private WebElement deliveryOnTheNextBuisenessDay;
 	
-	public PaymentPage(WebDriver driver) {
+	@FindBy(xpath = "//input[@type='button' and @value='Continue Checkout']")
+	private WebElement continueBtn;
+	
+	public PaymentPage() {
         this.driver = driver;
         PageFactory.initElements(driver, this);
 }
@@ -29,5 +32,9 @@ public class PaymentPage extends BaseClass {
 	return new OrderSummaryPage(driver);
 	}
 	
+	public OrderSummary clickOnPaymentMethod() throws Throwable {
+	    Action.click(driver(), continueBtn); // Assuming paymentMethodButton is correctly initialized
+	    return new OrderSummary(); // Make sure this navigates to OrderSummary
+	}
 	
 }

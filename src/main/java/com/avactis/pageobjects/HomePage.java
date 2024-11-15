@@ -1,4 +1,5 @@
 package com.avactis.pageobjects; 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,6 +24,8 @@ public class HomePage extends BaseClass {
 
     @FindBy(xpath = "//button[@type='button']")
     private WebElement register;
+    
+    
     
     public HomePage() {
         PageFactory.initElements(driver(), this);
@@ -69,4 +72,10 @@ public class HomePage extends BaseClass {
     public void setTextWithJS(WebElement element, String text) {
         jsExecutor.executeScript("arguments[0].value='" + text + "';", element);
     }
+
+
+	public void navigateToStore() {
+		// TODO Auto-generated method stub
+		driver.get("http://localhost/Avactis");  
+	}
 }

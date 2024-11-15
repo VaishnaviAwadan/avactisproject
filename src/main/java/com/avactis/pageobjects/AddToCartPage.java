@@ -49,5 +49,10 @@ Action action= new Action();
 	public boolean clickOnCheckout() throws Throwable {
 		return Action.JSClick(driver, ckeckoutBtn);
 	}
+	
+	public OrderPage clickOnCheckOut() throws Throwable {
+	    Action.click(driver(), ckeckoutBtn); // Assuming checkOutButton is the element
+	    return new OrderPage(); // Ensure this returns a new OrderPage instance
+	}
 		
 }
