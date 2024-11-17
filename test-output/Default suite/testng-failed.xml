@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.avactis.testcases.RegisteredUserTest">
+      <class name="com.avactis.testcases.LoginNegative">
         <methods>
-          <include name="RegisteredUser" invocation-numbers="0 1 2"/>
           <include name="setup"/>
+          <include name="loginNegativeTest"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.avactis.testcases.RegisteredUserTest -->
+      </class> <!-- com.avactis.testcases.LoginNegative -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
