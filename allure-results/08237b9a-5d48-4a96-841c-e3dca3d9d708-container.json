@@ -1,0 +1,1 @@
+{"uuid":"08237b9a-5d48-4a96-841c-e3dca3d9d708","name":"Test.testng.HomePageTest.setup","children":["efc20d03-92ea-4a4b-9758-03754ad8e1fa"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1731847628274,"stop":1731847634372}],"afters":[],"start":1731847628274,"stop":1731847634372}

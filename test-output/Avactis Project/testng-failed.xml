@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Avactis Project]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Second Test Group(failed)">
+    <classes>
+      <class name="com.avactis.testcases.RegistrationNegative">
+        <methods>
+          <include name="tearDown"/>
+          <include name="registrationTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.avactis.testcases.RegistrationNegative -->
+    </classes>
+  </test> <!-- Second Test Group(failed) -->
+</suite> <!-- Failed suite [Avactis Project] -->
